@@ -1,5 +1,11 @@
-function getUserName(userMail) {
-  
+/**
+ * 申請者名を取得
+ * 
+ * @param {string} userMail ß
+ * @returns {string} 申請者名
+ */
+function getUserName(userMail)
+{  
   //初期設定
   let lastRow       = RampageAccounts.getLastRow();                           //シートの最終行を取得
   let acountDetails = RampageAccounts.getRange(2,1,lastRow-1,4).getValues();  //スプレッドシートからユーザー情報を二次元配列で取得
@@ -8,12 +14,16 @@ function getUserName(userMail) {
   for(var i=0; i<lastRow-1; i++){
     if(acountDetails[i][3] == userMail) return acountDetails[i][2];
   }
-
 }
 
-
-function addGroundDetails(groundDetails){
-
+/**
+ * グラウンド情報を追加
+ * 
+ * @param {array} groundDetails
+ * @returns {void}
+ */
+function addGroundDetails(groundDetails)
+{
   //初期設定
   var lastRow      = RampageGrounds.getLastRow();  //シートの最終行を取得
   let arrayLastRow = groundDetails.length;         //配列の最終行を取得
@@ -26,7 +36,6 @@ function addGroundDetails(groundDetails){
   var lastRow = RampageGrounds.getLastRow();           //スプレッドシートの最終行を取得
   let range = RampageGrounds.getRange(2,1,lastRow,9);  //範囲を指定
   range.removeDuplicates([1]);                         //重複削除
-
 }
 
 
@@ -52,9 +61,13 @@ function declineEntrys(declineEntryIds){
 
 }
 
-
-function sortGroundList(){
-
+/**
+ * グラウンド情報をソート
+ * 
+ * @returns {void}
+ */
+function sortGroundList()
+{
   //初期設定
   let lastRow = RampageGrounds.getLastRow();            //スプレッドシートの最終行を取得
   let range   = RampageGrounds.getRange(2,1,lastRow,9)  //ソートする範囲を選択
@@ -65,5 +78,4 @@ function sortGroundList(){
     {column:3, ascending: true},
     {column:5, ascending: true}
   ]);
-
 }
