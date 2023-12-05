@@ -4,8 +4,8 @@
  * @param {string} userName - 申請者名
  * @returns {array} グラウンド情報詳細
  */
-function getEntryGroundDetails(userName) {
-ß
+function getEntryGroundDetails(userName)
+{
   //初期設定
   let subject       = "(【札幌市公共施設予約情報システム】予約申込完了のお知らせ)";            //メール件名を指定
   let mails         = GmailApp.search("subject:"+subject+"from:"+fromMail+query);  //gmailからメール一覧を取得

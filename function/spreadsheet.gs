@@ -1,7 +1,7 @@
 /**
  * 申請者名を取得
  * 
- * @param {string} userMail ß
+ * @param {string} userMail
  * @returns {string} 申請者名
  */
 function getUserName(userMail)
